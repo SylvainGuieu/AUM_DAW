@@ -1,15 +1,32 @@
 
-# Working Templates for a DAW like workflow using AUM 
+# An AUM based DAW to record MIDI and audio 
+
+Get started with the AudioBus templates: 
+
+- [4 MIDI + 2 Audio tracks](4M\ 2A.audiobuspreset.zip)
+- [8 MIDI + 4 Audio tracks](8M\ 4A.audiobuspreset.zip)
+
+Watch the video for a workflow demo, then some explanations :
+
+[![Everything Is AWESOME](https://img.youtube.com/vi/vtvC9dmNvCg/0.jpg)](https://www.youtube.com/watch?v=vtvC9dmNvCg "Everything Is AWESOME")
+
 
 These templates require the bellow apps :
 
 - audiobus 
 - AUM  
 - Xequence 2
-- Loopy Pro if recording Audio instrument is necessary in the song. MultiTrack Recorder can be an alternative.  
+- Loopy Pro if recording Audio instrument is necessary in the song. MultiTrack Recorder can be an alternative. 
 
-The template is presented in this video
+Optionally it is using MidiMixer and Nurack from 4Pockets and mfxStrip, just remove them if not needed.  
 
+
+
+It offers a full setup to speedup the workflow when building a song like one.
+
+I am using an M1 ipad and everything worked fine. But I am guessing these templates will add more stress on old iPad. 
+
+I will try to keep the templates up-to-date and add more stuff maybe.
 
 
 # How does it work ? 
@@ -32,30 +49,32 @@ Starting from left to right:
 
 The first 2 are the global MIDI inputs for sequencing AUM they are plugged into the sequencer output. In our case this is
 Xequence 2 but it can be something else like LK or Hellium AUV3 for instance. A sequencer plugged into the "IN" MIDI bus
-must work with different MIDI channel. 
+must work with different MIDI channel (each MIDI channel being an instrument). 
 
 ![](src/midiin.001.png)
 
 The "A", "B", "C", ... Midi in will naturally be mapped to instruments in AUM channel named "A", "B" "C" , ... 
 The template does not map them for you,  this is most probably the only mapping you have to do. When using an external
-keyboard you can use it from Xequence Directly. 
+MIDI keyboard you can use it from Xequence Directly and play from there. 
 
 The "Autom. IN" MIDI bus is mapped to the AUM "MIDI Control", this is aimed to handle any automation coming from Xequence 2 to faders, effects, etc... 
-this is a separate input line so one can shut it off by disabling or switching it on a side. 
+this is a separate input line so one can shut it off by disabling or switching it on a side. Out off the box, each
+instrument has Volume and Pan mapped directly, FX1, FX2 and master have Volume and 3 slots to control effects. One can
+then add as many as you want.  
 
 
-They are 2 MIDI Auv3, both mapped to AUM "MIDI Control :  
+They are 2 (optional) MIDI Auv3, both mapped to AUM "MIDI Control :  
 
-- the MidiMixer from 4Pockets 
-- the "Q Menu" which is actually a custom Nurack pad widget to navigate trough the project. It is a low profile discreet 
-  MIDI AUV3 which shall be all the time here in order to lunch the Mixer from anywhere and move across the project
-  (which is faster than going to the bookmark menu). 
+- the MidiMixer from 4Pockets. Very handy to mix everything from one page and record some mixing snapshots.
+- the "Q Menu" which is actually a custom Nurack MIDI pad widget.  Used to navigate trough the project. It is a low profile discreet 
+  MIDI AUV3 which shall be all the time open in order to lunch the Mixer from anywhere and move across the project
+  (which is faster than going to the bookmark menu, see video). 
 
  
-#### Audio 
+#### Audio inputs
 
-Then comes the Audio inputs (2 for this example: "Audio Recorder A" and "Audio Recorder B"). This is where one can fix
-the input level and maybe add some effect to be recorded. The loopy pro AUV3 instances (in audio bus)  are receiving these inputs. 
+Then comes the Audio inputs (2 for this example: "Audio Recorder A" and "Audio Recorder B"). This is where one can tune
+the input level and maybe add some effects to be recorded. The loopy pro AUV3 instances (in audio bus) are receiving these inputs. 
 
 ### Instrument Mixer 
 
@@ -66,21 +85,21 @@ loading instruments for the first time.
 
 It is important to keep the pairing (e.g. "A" MIDI in to "A" instrument) because the control of the AUM channel is
 mapped by channel. 
-For all my projects  A is channel 1, B channel 2, etc ...  
+For all my projects  A is always channel 1, B always channel 2, etc ...  
 
 ### Audio Mixer 
 
-The recorded clips are comming after and have the name "Audio A", "Audio B", ... 
+The recorded audio clips are coming after and have the name "Audio A", "Audio B", ... 
 
 <img src="src/IMG_0579.PNG" width=300>
 
-The Audios starts from Channel 9, e.g. "Audio A" control channel (volume, pan etc ...) is mapped to channel 9; "Audio B"
-to channel 10 and so on. 
+The Audios starts from Channel 9, e.g. "Audio A" control channel (volume, pan etc ...) is mapped to channel 9, always; "Audio B"
+to channel 10 and so on. The audio is coming from AudioBus via Loopy Pro.
 
 ### Master 
 
 Two FX buses and the Master is following. Master controls are mapped to Channel 16, FX1 to channel 15 and FX2 to Channel
-14. It is on the reverse order so one can add more if not interfering with an Audio line or a MIDI instrument line.  
+14. It is on the reverse order so one can add more if not interfering with other Audio lines or MIDI instrument lines.  
 
 
 <img src="src/IMG_0580.PNG" width=400>
@@ -99,10 +118,10 @@ The individual channel output are actually a small AUV3 call mfxStrip
 <img src="src/IMG_0587.jpg" width=400>
 
 It convert Any MIDI channels to the appropriate channel (1 for A, 2 for B, etc ...). In this way one can plug multi
-output MIDI generator without having to care about the used channel by the generator (some does not have the option to
+output MIDI generator without having to care about the used channel by the generator (some MIDI generators does not have the option to
 change channels).
 
-The Main OUT is mapped to Xequence Destination as well as the "Autom Rec" which is dedicated to record automation or LFO
+The Main OUT is mapped to *Xequence Destination* as well as the *Autom Rec* which is dedicated to record automation or LFO
 for instance. 
 
 
@@ -123,11 +142,11 @@ record automation.
 In multitrack record each track receive the Xequence destination source to its corresponding MIDI channel (A->1, B->2,
 ...). In single track recording the selected track is receiving all the MIDI Xequence is connected with. 
 
-On the configuration side the "virtual source" and MIDI thru shall be turned on. 
+On the configuration side the "virtual source" and "MIDI thru" shall be turned on. 
 
-MIDI thru allows to be able to work directly from Xequence withtout having to care of mapping things on AUM side. My
+MIDI thru allows to be able to work directly from Xequence without having to care of mapping things on AUM side. My
 keyboard controller is one of the MIDI source of Xequence 2 and when playing it will go to the "A", "B", or "C", etc 
-MIDI bus on AUM and the coresponding instrument.
+MIDI bus on AUM and the corresponding instrument.
 
 ![](src/IMG_0586.PNG)
 
@@ -152,7 +171,7 @@ menu and allows to save its state.
 
 ### AUDIO 
 
-In this example I have two audio lines with two instances of Loopy Pro (AUV3) as clip recorder. Source is coming from
+In this example I have two audio lines with two instances of Loopy Pro (AUV3) as clip recorder. Sources are coming from
 AUM (The "Audio A recorder" and "Audio B  Recorder") and output to AUM as well ("Audio A" and "Audio B" channel on AUM). 
 
 
@@ -161,14 +180,14 @@ AUM (The "Audio A recorder" and "Audio B  Recorder") and output to AUM as well (
 > **Why does Loopy pro AUV3 are not instantiated directly in AUM ?**
 
 Good question. This is because AUM cannot receive MIDI clock in (at least in 2022-09-07). In other word AUM cannot follow the song position
-mastered by Xequence 2. But Audiobus can and can transfer this to Loopy pro AUV3 instances.
+mastered by Xequence 2. But Audiobus can and it transfer this to Loopy pro AUV3 instances.
 
 
 Each instances of Loopy pro has several clips (3 linear, 2 loops) for a good start. One can remove or add on the go.
-The clips are supposed to represent a take or par of the song for the same audio instrument (voice, drum , guitar, ...). 
+The clips are supposed to represent a take or part of the song for the same audio instrument (voice, drum , guitar, ...). 
 
 Clips are placed inside the Loopy Pro Sequencer following the song timeline mastered by Xequence and though Audio Bus.
-The Loopy Pro sequencer can be use also to punch in and out a recording by drawing an empty clip inside the sequencer.  
+The Loopy Pro sequencer can be use also to punch in and out a record by drawing an empty clip inside the sequencer.  
 
 ![](src/IMG_0588.PNG)
 
