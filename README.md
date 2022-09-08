@@ -8,23 +8,25 @@ Get started with the AudioBus templates:
 
 Watch the video for a workflow demo, then some explanations :
 
-[![Everything Is AWESOME](https://img.youtube.com/vi/vtvC9dmNvCg/0.jpg)](https://www.youtube.com/watch?v=vtvC9dmNvCg "Everything Is AWESOME")
+[![Best DAW on IOS ?](https://img.youtube.com/vi/3UASp9eGYqs/0.jpg)](https://www.youtube.com/watch?v=3UASp9eGYqs "Best DAW ?")
 
 
 These templates require the bellow apps :
 
-- audiobus 
-- AUM  
-- Xequence 2
-- Loopy Pro if recording Audio instrument is necessary in the song. MultiTrack Recorder can be an alternative. 
+- [audiobus](https://audiob.us) 
+- [AUM](http://kymatica.com/apps/aum)  
+- [Xequence 2](http://www.seven.systems/xequence2/en/index/)
+- [Loopy Pro](https://loopypro.com) if recording Audio instrument is necessary in the song. MultiTrack Recorder can be an alternative. 
 
-Optionally it is using MidiMixer and Nurack from 4Pockets and mfxStrip, just remove them if not needed.  
+Optionally it is using [MidiMixer](https://apps.apple.com/us/app/midimixer-for-aum-auv3-plugin/id1542209150) and [NuRack](https://apps.apple.com/us/app/nurack-auv3-fx-processor/id1520146960) 
+from 4Pockets and [mfxStrip](https://apps.apple.com/us/app/mfxstrip/id1451194722), just remove them if not needed.  
 
 
+It offers a full setup to speedup the workflow when building a song with AUM and Xequence 2 and when recording audio for
+the song.
 
-It offers a full setup to speedup the workflow when building a song like one.
 
-I am using an M1 ipad and everything worked fine. But I am guessing these templates will add more stress on old iPad. 
+I am using an M1 ipad and everything worked fine. But I am guessing these templates will add more stress on old iPad .... 
 
 I will try to keep the templates up-to-date and add more stuff maybe.
 
