@@ -3,8 +3,8 @@
 
 Get started with the AudioBus templates: 
 
-- [4 MIDI + 2 Audio tracks](4M 2A.audiobuspreset.zip)
-- [8 MIDI + 4 Audio tracks](8M\ 4A.audiobuspreset.zip)
+- [4 MIDI + 2 Audio tracks](4M%202A.audiobuspreset.zip)
+- [8 MIDI + 4 Audio tracks](8M%204A.audiobuspreset.zip)
 
 Watch the video for a workflow demo, then some explanations :
 
@@ -37,8 +37,8 @@ I will try to keep the templates up-to-date and add more stuff maybe.
 
 The AUM project flows from left (inputs) to right (outputs).  
 
-Here are descriptions based on the [4 MIDI + 2 Audio project](4M\ 2A.audiobuspreset.zip), you can find similar layout on other templates. 
-The most complete one is [8 MIDI + 4 Audio project](8M\ 4A.audiobuspreset.zip), one can also start from this one and
+Here are descriptions based on the [4 MIDI + 2 Audio project](4M%202A.audiobuspreset.zip), you can find similar layout on other templates. 
+The most complete one is [8 MIDI + 4 Audio project](8M%204A.audiobuspreset.zip), one can also start from this one and
 remove the unnecessary parts. 
 
 Starting from left to right: 
