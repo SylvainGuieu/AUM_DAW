@@ -206,6 +206,35 @@ clock.
 ![](src/IMG_0589.PNG)
 
 
+# BONUS !
+
+## Faking an Audio clip 
+
+When you want to place an audio clip directly in Xequence 2, there is a possibility. Unfortunatly it is using Sample Wiz
+which is a very good App but not quite made for that kind of job. Didn't find any Cip launcher, Audio recorded which can
+do that. 
+
+This is explained in this video: 
+
+[![Faking an Audio Clip](https://img.youtube.com/vi/xzsERAZclBc/0.jpg)](https://www.youtube.com/watch?v=xzsERAZclBc "Faking audio Clip ?")
+
+The idea is :
+
+- map from Xequence 2 to Sample Wiz the "Sample Start" MIDI message. 
+- Make a linear ramp of that message in a MIDI clip in Xequence 2. The ramp (from 0 to 100%) must have the same length than the Audio
+  clip played
+- make a note to start the clip (at SampleStart). 
+
+Notes: 
+
+- I am using Pitch Bend because I can send a 14bit MIDI message which will be more accurate for long audio clip than the
+  regular 2**^7=128 MIDI message. With 14 bits on, let say, a 5minutes clip on a 120 bit/minutes you have a time resolution
+  of 0.04 bits ! More than enough.
+
+- On Xequence "Shase Note" should be unabled in MIDI/Recording config 
+
+
+Then you can place your "fake" Audio clip anywhere. 
 
 
 
