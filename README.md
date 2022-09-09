@@ -3,7 +3,7 @@
 
 Get started with the AudioBus templates: 
 
-- [4 MIDI + 2 Audio tracks](4M\ 2A.audiobuspreset.zip)
+- [4 MIDI + 2 Audio tracks](4M 2A.audiobuspreset.zip)
 - [8 MIDI + 4 Audio tracks](8M\ 4A.audiobuspreset.zip)
 
 Watch the video for a workflow demo, then some explanations :
