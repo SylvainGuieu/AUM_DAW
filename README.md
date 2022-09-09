@@ -7,7 +7,7 @@ Get started with the AudioBus templates:
 - [8 MIDI + 4 Audio tracks](8M%204A.audiobuspreset.zip)
 - [8 MIDI](8M.audiobuspreset.zip)
 
-They all include MIDI bus routing 2 FX slots and one Master
+They all include MIDI bus routing, MidiMixer, the small "Quick Menu",  2 FX slots and one Master.
 
 Watch the video for a workflow demo, then some explanations :
 
